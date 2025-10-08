@@ -95,8 +95,8 @@ class ApiClient {
 
     // Add frontend-only headers for Binance endpoints
     if (endpoint.includes('/api/binance')) {
-      defaultHeaders['Origin'] = 'http://localhost:3001'
-      defaultHeaders['Referer'] = 'http://localhost:3001'
+      defaultHeaders['Origin'] = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3001'
+      defaultHeaders['Referer'] = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3001'
       defaultHeaders['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     }
 
